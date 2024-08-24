@@ -1,0 +1,15 @@
+<div class="flex justify-center items-center mt-16">
+<div class="border-blue-500 border-2 w-1/2">
+    <h2 class="font-extrabold text-lg text-center">OTP Verification</h2>
+
+    <h3 class="text-center mt-11">Verify the email : {{email}}</h3>
+    <div class="p-14 text-center">
+    <label for="otp" class="m-2">Enter OTP:</label>
+    <input type="text" id="otp" [(ngModel)]="otp" name="otp" class="border-2 border-red-500 p-1 rounded-md" required>
+    <br>
+
+    <button (click)="verifyOtp()" class="bg-teal-400 p-3 m-5 px-8 rounded-3xl hover:bg-green-500 font-bold">Verify</button>
+</div>
+  </div>
+</div>
+  

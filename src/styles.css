@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.toast-container {
+    position: fixed;
+    top: 10px; /* Adjust this value to set the distance from the top */
+    right: 20px; /* Adjust this value to set the distance from the right */
+    width: 10%; /* Adjust this value based on your content */
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+  }
+  
+
+  .toast-error  {
+    background-color: #ff0000;
+    border-radius: 5px; /* Example background color */
+    color: #fff;
+     /* Example padding */
+  }
+  .toast-success {
+    background-color: #1cac42; 
+    border-radius: 5px;/* Example background color */
+    color: #fff;
+    /* Example padding */
+  }
+
+  .toast-info .toast-icon {
+    font-size: 24px; /* Example icon size */
+    color: #007bff; /* Example icon color */
+  }
+  

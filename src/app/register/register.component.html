@@ -1,0 +1,50 @@
+<div class="flex flex-col justify-center items-center">
+    <div class="example-container mt-6 flex flex-col justify-center items-center border-blue-800 bg-slate-400 border-2 w-1/2 p-8 rounded-lg">
+      <h1 class="font-bold text-xl">Register</h1>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="text-start w-full">
+          <div class="w-full">
+            <h1>Name :</h1>
+            <mat-form-field class="w-full">
+              <mat-label>Enter your name</mat-label>
+              <input  matInput placeholder="Abishek" formControlName="name" required>
+            </mat-form-field>
+          </div>
+          <div>
+            <h1>Email :</h1>
+            <mat-form-field class="w-full">
+              <mat-label>Enter your email</mat-label>
+              <input matInput placeholder="pat@example.com" formControlName="email" required>
+              <mat-error *ngIf="email?.invalid">{{ getErrorMessage() }}</mat-error>
+            </mat-form-field>
+          </div>
+          <div>
+            <h1>Password :</h1>
+            <mat-form-field class="w-full">
+              <mat-label>Enter your password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{ hide ? 'visibility_off' : 'visibility'
+                              }}</mat-icon>
+            </button>
+            <mat-error *ngIf="password?.invalid">{{ getPassErrorMessage() }}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="mt-6">
+          <h1>Confirm Password :</h1>
+          <mat-form-field>
+            <mat-label>Re-Enter your password</mat-label>
+            <input matInput [type]="hide2 ? 'password' : 'text'" formControlName="confirmPassword" required>
+            <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+              <mat-icon>{{ hide2 ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+      </div>
+      <button class="bg-amber-300 p-3 rounded-3xl px-8 hover:bg-green-600" [disabled]="registerForm.invalid">Register</button>
+      <h1 class="p-3">Already an User? <a routerLink="/login" class="text-blue-700 font-bold"> Login </a></h1>
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>
+  

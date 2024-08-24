@@ -1,0 +1,15 @@
+<div class="flex justify-center items-center mt-16">
+    <div class="border-blue-500 border-2 w-1/2">
+        <h2 class="font-extrabold text-lg text-center">New Password</h2>
+    
+        <div class="p-14 text-center">
+        <label for="otp" class="m-2">Enter Password:</label>
+        <input type="text" id="otp" [(ngModel)]="pass" name="Password" class="border-2 border-red-500 p-1 rounded-md" required>
+        <br>
+        <label for="otp" class="p-2 w-full">The token is :{{token}}</label>
+        <br>
+    
+        <button  (click)="resetPassword()" class="bg-teal-400 p-3 m-5 px-8 rounded-3xl hover:bg-green-500 font-bold">Reset the password</button>
+    </div>
+      </div>
+    </div>
